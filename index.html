@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wordly Dictionary</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <header class="header">
+       <div class="logo">
+        <span class="logo-icon">📚</span>
+        <span class="app-name">Wordly<span class="app-name-subtext">Dictionary</span></span>
+     </div>
+    </header>
+
+    <form id="search-form">
+      <input 
+        type="text" 
+        id="word-input" 
+        placeholder="Enter a word..." 
+        required 
+      />
+      <button type="submit">Search</button>
+    </form>
+
+    <div id="loading" class="hidden">Loading...</div>
+
+    <div id="error" class="hidden"></div>
+
+    <div id="result">
+      <h2 id="word"></h2>
+      <p id="pronunciation"></p>
+      <p id="part-of-speech"></p>
+      <p id="definition"></p>
+      <p id="example"></p>
+      <p id="synonyms"></p>
+      <a id="source" target="_blank"></a>
+    </div>
+
+    <button id="theme-toggle">🌙</button>
+  </div>
+
+  <footer class="footer">
+  <div class="footer-content">
+    
+    <div class="footer-brand">
+      <span class="logo-icon">📚</span>
+      <span>Wordly</span>
+    </div>
+
+    <p class="footer-copy">
+      © 2026.Powered by <a href="https://dictionaryapi.com" target="_blank">Dictionary API</a>
+    </p>
+
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+  
+</body>
+
+</html>

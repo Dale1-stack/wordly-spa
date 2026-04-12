@@ -1,0 +1,268 @@
+
+:root {
+  --bg: #f9fafb;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --primary: #6366f1;
+  --border: #e5e7eb;
+}
+
+body.dark {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --border: #334155;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 40px 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+   margin: auto;
+  flex: 1; 
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  font-size: 28px;
+}
+
+.app-name {
+  font-weight: 700;
+  font-size: 20px;
+  color: #eb0c0c;
+}
+
+.app-name-subtext {
+  font-size: 12px;
+  color: var(--muted);
+  display: block;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  font-size: 15px;
+  background: var(--card);
+  color: var(--text);
+  transition: 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+button {
+  padding: 14px 18px;
+  border: none;
+  border-radius: 14px;
+  background: var(--primary);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+#theme-toggle {
+  margin-top: 20px;
+  width: auto;              
+  padding: 8px 12px;       
+  font-size: 14px;         
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#theme-toggle:hover {
+  background: var(--primary);
+  color: white;
+}
+
+#result {
+  margin-top: 20px;
+  padding: 25px;
+  border-radius: 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  animation: fadeIn 0.3s ease;
+}
+
+
+#word {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+
+#pronunciation {
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+#part-of-speech {
+  font-size: 14px;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+#definition,
+#example,
+#synonyms {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+#definition::before {
+  content: "Definition: ";
+  font-weight: 600;
+}
+
+#example::before {
+  content: "Example: ";
+  font-weight: 600;
+}
+
+#synonyms::before {
+  content: "Synonyms: ";
+  font-weight: 600;
+}
+
+#source {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#source:hover {
+  text-decoration: underline;
+}
+
+#loading {
+  margin-top: 10px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 10px;
+  animation: loading 1s infinite;
+}
+
+#error {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #fee2e2;
+  color: #991b1b;
+  font-size: 14px;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes loading {
+  0% { width: 0%; }
+  50% { width: 60%; }
+  100% { width: 100%; }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer {
+  padding: 25px 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: auto;
+}
+
+.footer-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.footer-brand .logo-icon {
+  font-size: 20px;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+.footer-copy {
+  font-size: 13px;
+  color: var(--muted);
+}
