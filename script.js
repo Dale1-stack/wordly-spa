@@ -14,6 +14,8 @@ const definitionEl = document.getElementById("definition");
 const exampleEl = document.getElementById("example");
 const synonymsEl = document.getElementById("synonyms");
 const sourceEl = document.getElementById("source");
+const audioBtn = document.getElementById("play-audio");
+let audio = null;
 
 const themeToggle = document.getElementById("theme-toggle");
 
@@ -77,6 +79,15 @@ function displayWord(data) {
     ? data.sourceUrls[0]
     : "#";
 
+  const phoneticWithAudio = data.phonetics.find(p => p.audio);
+
+  if (phoneticWithAudio && phoneticWithAudio.audio) {
+    audio = new Audio(phoneticWithAudio.audio);
+    audioBtn.classList.remove("hidden");
+  } else {
+    audioBtn.classList.add("hidden");
+  }
+
   resultDiv.classList.remove("hidden");
 }
 
@@ -130,5 +141,10 @@ themeToggle.addEventListener("click", () => {
   }
 });
 
+audioBtn.addEventListener("click", () => {
+  if (audio) {
+    audio.play();
+  }
+});
 
 loadTheme();
